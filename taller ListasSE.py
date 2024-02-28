@@ -36,7 +36,11 @@ class ListaSE:
         else: 
             nuevo_nodo.siguiente = self.cabeza
             self.cabeza = nuevo_nodo
-    
+            
+    def EliminarPrimero(self):
+        if self.cabeza != None:
+            nododiferente = self.cabeza.siguiente
+            self.cabeza = nododiferente
     
     
     
