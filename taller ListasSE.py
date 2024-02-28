@@ -4,11 +4,29 @@ class Nodo:
         self.data = valor
         self.siguiente = None
     
+
 class ListaSE:
     
     def __init__(self):
         self.cabeza = None
+    def  AgregarNodoFinal(self , valor):
         
+        nuevo_nodo = Nodo(valor)
+        
+        if self.cabeza != None :
+            nodoSustituto = self.cabeza
+            
+            if nodoSustituto.siguiente != None:
+                while nodoSustituto.siguiente != None:
+                     nodoSustituto = nodoSustituto.siguiente
+                 
+                nodoSustituto.siguiente = nuevo_nodo
+            else:
+                self.cabeza.siguiente = nuevo_nodo
+                
+        else:
+            self.cabeza = nuevo_nodo
+            
     def AgregarNodoInicio( self , valor) :
         nuevo_nodo = Nodo(valor)
         
@@ -23,9 +41,10 @@ class ListaSE:
     
     
 lista_Simple = ListaSE()
-lista_Simple.AgregarNodoInicio(5)
-print(lista_Simple.cabeza.data)
-lista_Simple.AgregarNodoInicio(8)
-print(lista_Simple.cabeza.data)
+lista_Simple.AgregarNodoInicio(1)
+lista_Simple.AgregarNodoFinal(2)
+lista_Simple.AgregarNodoFinal(5)
+print(lista_Simple.cabeza.siguiente.siguiente.data)
+
 
  
