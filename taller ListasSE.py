@@ -1,7 +1,5 @@
 class Nodo:
     
-    #Constructor de la clase Nodo
-    
     def __init__( self , valor ):
         self.data = valor
         self.siguiente = None
@@ -12,7 +10,6 @@ class ListaSE:
         self.cabeza = None
         
     def AgregarNodoInicio( self , valor) :
-        #Primero se crea el nodo, duh, y después se comprueba si existe la cabeza o no
         nuevo_nodo = Nodo(valor)
         
         if self.cabeza is None:
