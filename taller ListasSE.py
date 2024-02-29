@@ -42,13 +42,29 @@ class ListaSE:
             nododiferente = self.cabeza.siguiente
             self.cabeza = nododiferente
     
-    
-    
+    def EliminarUltimo(self):
+
+      if self.cabeza != None :
+        nodoSustituto = self.cabeza
+
+        while nodoSustituto.siguiente != None :
+         nodoUltimo = nodoSustituto 
+         nodoSustituto = nodoSustituto.siguiente
+
+         nodoUltimo.siguiente = None
+
+      else:
+        self.cabeza = None
+
+
 lista_Simple = ListaSE()
 lista_Simple.AgregarNodoInicio(1)
 lista_Simple.AgregarNodoFinal(2)
 lista_Simple.AgregarNodoFinal(5)
-print(lista_Simple.cabeza.siguiente.siguiente.data)
+lista_Simple.AgregarNodoFinal(6)
 
+lista_Simple.EliminarUltimo()
+print(lista_Simple.cabeza.siguiente.data)
+print(lista_Simple.cabeza.siguiente.siguiente.data)
 
  
